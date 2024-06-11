@@ -39,9 +39,17 @@ public class ArrayList<T> {
      * @param data the data to add to the front of the list
      * @throws java.lang.IllegalArgumentException if data is null
      */
-    // public void addToFront(T data) {
-    //     // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
-    // }
+    public void addToFront(T data) {
+        // Shifting original elements to the right by 1 index
+        if (data == null) {
+            throw new IllegalArgumentException();
+        }
+        for (int i = size-1; i >= 0; i--) {
+            backingArray[i+1] = backingArray[i];
+        }
+        backingArray[0] = data;
+        size += 1;
+    }
 
     /**
      * Adds the data to the back of the list.
