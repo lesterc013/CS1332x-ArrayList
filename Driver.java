@@ -14,8 +14,12 @@ public class Driver {
         for (int i = 1; i <= 36; i++) {
             test.addToFront(i);
         }
-        for (int i = 0; i < test.size(); i++) {
-            System.out.println(test.get(i));
-        }
+        
+        Integer backElement = test.removeFromBack();
+            for (int i = 0; i < test.size(); i++) {
+                System.out.println(test.get(i));
+            }
+        System.out.println(test.get(test.size()));
+        System.out.println(backElement);
     }
 }

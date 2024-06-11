@@ -40,7 +40,6 @@ public class ArrayList<T> {
      * @throws java.lang.IllegalArgumentException if data is null
      */
     public void addToFront(T data) {
-        // Shifting original elements to the right by 1 index
         if (data == null) {
             throw new IllegalArgumentException();
         }
@@ -103,9 +102,12 @@ public class ArrayList<T> {
      * @return the data formerly located at the back of the list
      * @throws java.util.NoSuchElementException if the list is empty
      */
-    // public T removeFromBack() {
-    //     // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
-    // }
+    public T removeFromBack() {
+        T backElement = backingArray[size-1];
+        backingArray[size-1] = null;
+        size -= 1;
+        return backElement;
+    }
 
     /**
      * Returns the backing array of the list.
@@ -143,8 +145,6 @@ public class ArrayList<T> {
         for (int i = 0; i < size; i++) {
             newBackingArray[i] = backingArray[i];
             }
-        System.out.println("Old capacity was: " + backingArray.length);
         backingArray = newBackingArray;
-        System.out.println("New capacity is: " + backingArray.length);
     }
 }
