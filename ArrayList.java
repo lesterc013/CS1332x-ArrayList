@@ -44,6 +44,11 @@ public class ArrayList<T> {
         if (data == null) {
             throw new IllegalArgumentException();
         }
+
+        int capacity = backingArray.length;
+        if (size == capacity) {
+            resize(capacity);
+        }
         for (int i = size-1; i >= 0; i--) {
             backingArray[i+1] = backingArray[i];
         }

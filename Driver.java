@@ -11,7 +11,7 @@ public class Driver {
         // test.addToBack(null);
 
         // test.addToFront(null);
-        for (int i = 1; i <= 9; i++) {
+        for (int i = 1; i <= 36; i++) {
             test.addToFront(i);
         }
         for (int i = 0; i < test.size(); i++) {
