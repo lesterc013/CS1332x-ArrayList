@@ -103,6 +103,9 @@ public class ArrayList<T> {
      * @throws java.util.NoSuchElementException if the list is empty
      */
     public T removeFromBack() {
+        if (size == 0) {
+            throw new NoSuchElementException();
+        }
         T backElement = backingArray[size-1];
         backingArray[size-1] = null;
         size -= 1;
